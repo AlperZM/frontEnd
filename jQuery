@@ -1,0 +1,13 @@
+//jQuery -> javaScript library,
+
+//Basic Notes / Temel notlar
+// All functions start whit "$" / Tüm fonksiyonlar "$" işareti ile başlar. 
+// CSS selectors are same way (class => "."), (id => "#") / CSS seçicileri ile aynı işaret 
+
+//Documnet Ready Function, !important / Önemli
+<script>$(document).ready(function() {});</script>
+<script>
+  $(document).ready(function() {
+    $(".well").addClass("animated bounce");
+  });
+</script>
