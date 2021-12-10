@@ -46,4 +46,28 @@ div {
 
 //@each like array.map in JS
 
+//@while
+$x: 1;
+@while $x < 13 {
+  .col-#{$x} { width: 100%/12 * $x;}
+  $x: $x + 1;
+}
+
+
+// partials
+/* starts whit "_" and ends whit ".scss", partials need to import
+variable.scss => @import "variables"; SASS imports and use the file
+*/
+
+// extend copies an element to an other element
+.panel{background-color: red;height: 70px;border: 2px solid green;}
+//||||
+.big-panel{@extend .panel;width: 150px;font-size: 2em;}
+
+//
+
+
+
+
+
 
