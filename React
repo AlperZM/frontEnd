@@ -1,1 +1,12 @@
 //basic React Notes
+//for JS code in React => { 'this is treated as JavaScript code' }. 
+// need to babel
+// every JSX (Constans) include just one HTML Element. (it can include multi child elements)
+// COMMENTS
+{/* THİS İS COMMNETS LİNE */}
+
+//REACT DOM 
+ReactDOM.render(componentToRender, targetNode)
+
+//className => JSX uze "class" for JS so if need it use "className"
+
