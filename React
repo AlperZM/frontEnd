@@ -1,7 +1,19 @@
 // tr.reactjs.org adresinden notlar.
-// first https://tr.reactjs.org/docs/hello-world.html
+// first https://tr.reactjs.org/docs/hello-world.html -> 3. bileşenler ve proplar
 // second https://tr.reactjs.org/tutorial/tutorial.html
 // JSX = Statement (JS Sözdizimi)
 // ->JSX => const element = <h1>Hello, world!</h1>; 
 // React sperates HTML and JS.
-// 
+// {/*any javaScript statement here */}
+const name = 'Josh Perez';const element = <h1>Hello, {name}</h1>;
+ReactDOM.render(
+  element,
+  document.getElementById('root')
+);
+
+//<div id="root></div> => root of the react. can use multi roots...
+const element = <h1>Hello, world</h1>;
+ReactDOM.render(element, document.getElementById('root'));
+// ReactDOM.render(para1, para2); ile root düğümüne geçiş yapılır.
+
+
