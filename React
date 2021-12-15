@@ -16,4 +16,17 @@ const element = <h1>Hello, world</h1>;
 ReactDOM.render(element, document.getElementById('root'));
 // ReactDOM.render(para1, para2); ile root düğümüne geçiş yapılır.
 
+// 
+class extends React.Component{
+constructor(props){
+super(props); // must be used
+//any code
+}
+
+
+// mounting => değişkenin takılması
+// unmounting => değişkenin çıkarılması
+//lifecycle methods => yaşam döngüsü metodları
+componentDidMount() {/* starts lifecycle - yaşam döngüsü*/
+    this.timerID/* Timer ID - zamanlayıcı ID*/ = setInterval(      () => this.tick(),      1000    );  }
 
