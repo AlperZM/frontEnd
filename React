@@ -70,4 +70,47 @@ ReactDOM.render(
 
 
 // State yukarı taşıma - dönüştürme fonksiyonları
-<TemperatureInput scale="f" />
+const scalaNames = {
+c: "Santigrat", f: "Fahrenhayt"
+}
+
+class TemperatureInput extends React.Component{
+constructor(props){
+super(props);
+this.handleChange = this.handleChange.bind(this);
+this.state = {temperature: ""};
+}
+handleChange(e){this.setState({temperature: e.target.value});}
+
+
+render(){
+const temperature = this.state.temperature;
+const scale = this.props.scale;
+return(
+<fieldset>
+  <legend>Sayı Değeri Giriniz:</legend>
+ <input value={temperature} onChange={this.handleChange} />
+ 
+</fieldset>
+);
+}}
+class Calculator extends React.Component{
+render(){
+return(
+<div>
+  <TemperatureInput scale="c" />
+  <TemperatureInput scale="f" />
+</div>);}}
+
+function toCelcius(fahrenhayt){
+return (fahrenhayt - 32) * 5/9;
+}
+ function toFahrenhayt(celcius){
+ return (celcius * 9/5) + 32;
+ }
+
+ReactDOM.render(
+  <Calculator />,
+  document.getElementById('root')
+);
+
