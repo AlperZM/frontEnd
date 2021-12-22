@@ -1,4 +1,4 @@
-// tr.reactjs.org adresinden notlar.
+// tr.reactjs.org adresinden notlar. / line 72 Stat yukarı taşıma
 // first https://tr.reactjs.org/docs/hello-world.html -> 10. State'i Yukarı Taşıma
 // second https://tr.reactjs.org/tutorial/tutorial.html
 // JSX = Statement (JS Sözdizimi)
@@ -69,4 +69,5 @@ ReactDOM.render(
 );
 
 
-
+// State yukarı taşıma - dönüştürme fonksiyonları
+<TemperatureInput scale="f" />
