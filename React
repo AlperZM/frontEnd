@@ -206,3 +206,12 @@ alert("Hoş Geldnizi: "+this.state.login);
 ReactDOM.render(
 <SingUp />, document.getElementById("root")
 );
+
+//Reactte düşünmek / thinking in react
+// Uygulama hiyerarşisi oluştur.
+// static=> çok yaz - az düşün|| dinamik => az yaz - çok düşün
+// basit projeler => yukarıdan aşağıya;
+// karmaşık projeler => aşağıdan yukarıya doğru kodlanır. böylece daha kolay test edilebilir.
+
+
+
