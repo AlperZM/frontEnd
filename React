@@ -166,3 +166,43 @@ ReactDOM.render(
   <Calculator />,
   document.getElementById('root')
 );
+
+
+// Deneme
+//dış kabuk
+function Borders(props){
+return(
+<section className={"Border BorderColor-" + props.color}>{props.children}</section>);
+}
+// iç kabuk
+function Dialog(props){
+return(
+<Borders color="red">
+  <h1 className="Dialog-title">{props.title}</h1>
+  <p className="Dialog-message">{props.message}</p>
+  {props.children}
+</Borders>);
+}
+
+class SingUp extends React.Component{
+constructor(props){
+super(props);
+this.handleChange= this.handleChange.bind(this);
+this.handleSubmit= this.handleSubmit.bind(this);
+this.state = {login: ""};}
+render(){
+return(
+<Dialog title="Merhaba" message="Yolculuğunuza Hoş geldiniz!"> <input value= {this.state.login} onChange= {this.handleChange} /> <button type="submit" onClick={this.handleSubmit} >Gönder</button> 
+</Dialog>);
+}
+
+handleChange(e){this.setState({login: e.target.value});}
+handleSubmit(){
+alert("Hoş Geldnizi: "+this.state.login);
+}
+
+}
+
+ReactDOM.render(
+<SingUp />, document.getElementById("root")
+);
