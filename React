@@ -31,13 +31,13 @@ componentDidMount() {/* starts lifecycle - yaşam döngüsü*/
     this.timerID/* Timer ID - zamanlayıcı ID*/ = setInterval(      () => this.tick(),      1000    );  }
 
 // state => stores anything in class. set state value in constructor. / state => class içindeki herhangi bir değer. constructorda tanımlanır.
-
+// state temel bileşendir. deişmez. Değiştirmek için setState kullanılır.
  // Callback içerisinde `this` erişiminin çalışabilmesi için, `bind(this)` gereklidir    this.handleClick = this.handleClick.bind(this);
  
  //<button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
 //<button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 
-//key => helps react to changed nodes. 
+//key => helps react to changed nodes. // her <li> elementinde olması gerek. Benzersiz isim kullan
 // KEY ~ this
 //<li key = {e.toString()}> listItem </li>
 
