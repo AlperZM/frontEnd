@@ -69,10 +69,40 @@ const myelement = (/* çoklu elementleri tek bir üst element içerisine al */
 
 const x = 5; /* JSX içerisinde "if" sadece ternary olarak kullanılır. ya da if için jsx dışında kod yazılmalı */
 const myelement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
+/* props =~ fonksiyon argümanları
+state =~ durumlar.
 
 
+*/
+class Car extends React.Component {
+  constructor(props) {
+    super(props); /* props burda deklare edilir. */
+  }
+  render() {/* ReactDOM.render() ile bu props için değer atanır */
+    return <h2>I am a {this.props.model}!</h2>; /* model burda ilk görülür. daha sonraki değerler için yer tutar.*/
+  }
+}
 
+ReactDOM.render(<Car model="Mustang"/>, document.getElementById('root')); /* props için burda değer verilir. ilk görülen props için değer burada verilir.*/
+// components iler birbirine referans verebilir, iç içe geçebilir.
+class Car extends React.Component {
+  render() {
+    return <h2>I am a Car!</h2>;
+  }
+}
 
+class Garage extends React.Component {
+  render() {
+    return (
+      <div>
+      <h1>Who lives in my Garage?</h1>
+      <Car />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<Garage />, document.getElementById('root'));
 
 
 
