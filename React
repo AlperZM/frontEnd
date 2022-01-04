@@ -5,6 +5,76 @@ import ReactDOM from "react-dom";
 <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
 <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
 <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+// NPX ve nodejs yüle ve şu komutu çalıştırarak ract kur
+create-react-app
+npx create-react-app my-react-app /* my-react-app isteğe bağlı isim */
+
+//w3schools notları
+//class es6 özelliği
+class Model extends Car { /* extends=> üst class özelliklerini aynen kullanır(inheritance).*/
+  constructor(name, mod) { /* class özellikleri(properities) ve metodları constructor içine yazılır. */
+    super(name); /* üst class(parent class) özellik ve metodlarını kullanır. */
+    this.model = mod;
+  }  
+  show() {
+      return this.present() + ', it is a ' + this.model
+  }
+}
+class Example extends React.Component{ /*Example class oluşturuldu ve ReactComponent(yerleşik react class) özellik ve metodları koyalandı */
+constructor(props){ /* temel react özellikleri için props kullanıldı */
+super(props); // must be used
+//any code
+}
+
+// arrow functions () => any code; /* normal fonksyonun kısaltılmıış hali*/
+// destructrşng => gerekli olanı almak:
+const vehicles = ['mustang', 'f-150', 'expedition'];
+const [car, truck, suv] = vehicles; /* aynı sıralmada olanı alır. */
+const vehicles = ['mustang', 'f-150', 'expedition'];
+const [car,, suv] = vehicles; /* arada atlanmak istenen öğeler için boş bırakılır. */
+
+const vehicleOne = {
+  brand: 'Ford',
+  model: 'Mustang',
+  type: 'car',
+  year: 2021, 
+  color: 'red'
+}
+
+myVehicle(vehicleOne);
+
+function myVehicle({type, color, brand, model}) {
+  const message = 'My ' + type + ' is a ' + color + ' ' + brand + ' ' + model + '.';
+}
+
+// render
+ReactDOM.render(<p>Hello</p>, document.getElementById('root'));
+/* ilk kısım html elementi, ikinci kısım onun nereye iletileceğini gösterir.*/
+
+
+// jsx = javaScriptXml -> JS içine HTML kodları yazmaya yarar.
+const myelement = ( /* çoklu html elementlerini paranteze içine al */
+  <ul>
+    <li>Apples</li>
+    <li>Bananas</li>
+    <li>Cherries</li>
+  </ul>
+);
+const myelement = (/* çoklu elementleri tek bir üst element içerisine al */
+  <div>
+    <p>I am a paragraph.</p>
+    <p>I am a paragraph too.</p>
+  </div>
+);
+
+const x = 5; /* JSX içerisinde "if" sadece ternary olarak kullanılır. ya da if için jsx dışında kod yazılmalı */
+const myelement = <h1>{(x) < 10 ? "Hello" : "Goodbye"}</h1>;
+
+
+
+
+
+
 
 
 
