@@ -1,3 +1,13 @@
+// install react ile kullanılır
+import React from "react";
+import ReactDOM from "react-dom";
+// Bu dosyaları ekle
+<script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+
+
 // tr.reactjs.org adresinden notlar. / line 72 Stat yukarı taşıma
 // first https://tr.reactjs.org/docs/hello-world.html -> 11. bileşim vs kalıtım
 // second https://tr.reactjs.org/tutorial/tutorial.html
@@ -67,7 +77,9 @@ return(
 ReactDOM.render(
 <FormName />, document.getElementById("root")
 );
-
+// state as a props
+// uygulamada dikey ya da yaytay bilgi akışı için state - props olarak kullanılır.
+//Tanımlarken this.state.... ile tanımlanıp render edilir.
 
 // State yukarı taşıma - dönüştürme fonksiyonları
 const scaleNames = {
