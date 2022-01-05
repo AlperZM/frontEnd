@@ -8,7 +8,7 @@ import ReactDOM from "react-dom";
 // NPX ve nodejs yüle ve şu komutu çalıştırarak ract kur
 create-react-app
 npx create-react-app my-react-app /* my-react-app isteğe bağlı isim */
-
+// https://www.w3schools.com/react/react_class.asp ### Tekrar et
 //w3schools notları
 //class es6 özelliği
 class Model extends Car { /* extends=> üst class özelliklerini aynen kullanır(inheritance).*/
@@ -127,12 +127,116 @@ this will initiate the parent's constructor method and allows the component to i
 */
 /*
 getDerivedStateFromProps
-
+Bu güncelleme yaptıktan sonra buton gibi değişiklikler yok sayılır. Bu React kodlarını da günceller.
 The getDerivedStateFromProps() method is called right before rendering the element(s) in the DOM.
 This is the natural place to set the state object based on the initial props.
 It takes state as an argument, and returns an object with changes to the state.
 The example below starts with the favorite color being "red", 
-but the getDerivedStateFromProps() method updates the favorite color based on the favcol attribute:
+but the getDerivedStateFromProps() method updates the favorite color based on the favcol attribute:*/
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  static getDerivedStateFromProps(props, state) {
+    return {favoritecolor: props.favcol };
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+/* componentDidMount 
+The componentDidMount() method is called after the component is rendered.
+This is where you run statements that requires that the component is already placed in the DOM.*/
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  render() {
+    return (
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+    );
+  }
+}
+
+ReactDOM.render(<Header />, document.getElementById('root'));
+
+/* updating
+*/
+shouldComponentUpdate() // değişiklik yapılıp yapılmayacağını denetler. false değeri değişikliklere izin vermez.
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  shouldComponentUpdate() {
+    return false;
+  }
+  changeColor = () => {
+    this.setState({favoritecolor: "blue"});
+  }
+  render() {
+    return (
+      <div>
+      <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+      <button type="button" onClick={this.changeColor}>Change color</button>
+      </div>
+    );
+  }
+}
+getSnapshotBeforeUpdate() // değişiklik geçmişini alır.
+/* In the getSnapshotBeforeUpdate() method you have access to the props and state before the update, 
+meaning that even after the update, you can check what the values were before the update.
+güncellemeden önce props ve state değerlerini alır. böylece hangi değişikliklerin yapıldığı kontrol edilebilir.
+getSnapshotBeforeUpdate(), componentDidUpdate() ile birlikte kullanılır.
+If the getSnapshotBeforeUpdate() method is present, 
+you should also include the componentDidUpdate() method, otherwise you will get an error.
+class Header extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {favoritecolor: "red"};
+  }
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({favoritecolor: "yellow"})
+    }, 1000)
+  }
+  getSnapshotBeforeUpdate(prevProps, prevState) {
+    document.getElementById("div1").innerHTML =
+    "Before the update, the favorite was " + prevState.favoritecolor;
+  }
+  componentDidUpdate() {
+    document.getElementById("div2").innerHTML =
+    "The updated favorite is " + this.state.favoritecolor;
+  }
+  render() {
+    return (
+      <div>
+        <h1>My Favorite Color is {this.state.favoritecolor}</h1>
+        <div id="div1"></div>
+        <div id="div2"></div>
+      </div>
+    );
+  }
+}
+
+
+
+
+
+
+
+
+
 
 // tr.reactjs.org adresinden notlar. / line 72 Stat yukarı taşıma
 // first https://tr.reactjs.org/docs/hello-world.html -> 11. bileşim vs kalıtım
