@@ -1,3 +1,6 @@
+/* ### React Hooks - w3Schools ###*/
+
+
 // install react ile kullanılır
 import React from "react";
 import ReactDOM from "react-dom";
@@ -245,7 +248,12 @@ function Football() {
 
 // Ternary operator tekrar et
 
-
+/*Create React App doesn't include page routing.=> Yönlendirme
+React Router is the most popular solution.
+*/
+npm i -D react-router-dom // router kurmak için...
+/* React Memo: optimum performance
+*/
 
 
 
