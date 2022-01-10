@@ -14,6 +14,7 @@ npx create-react-app my-react-app /* my-react-app isteğe bağlı isim */
 // https://www.w3schools.com/react/react_class.asp ### Tekrar et
 //w3schools notları
 //class es6 özelliği
+// return metodundan hemen önce normal JS codu yazılabilir. Render içinde jsx kullanılır.
 class Model extends Car { /* extends=> üst class özelliklerini aynen kullanır(inheritance).*/
   constructor(name, mod) { /* class özellikleri(properities) ve metodları constructor içine yazılır. */
     super(name); /* üst class(parent class) özellik ve metodlarını kullanır. */
