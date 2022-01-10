@@ -1,0 +1,5 @@
+//redux farklı teknolojilerle çalışır. 
+// büyük projelerde state değerlerini güncellemek için kullanılır.
+//redux store uygulamadaki state değerini tutar.
+store.getState() // bir state değeri çağırır.
+let currentState = store.getState();
