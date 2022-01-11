@@ -17,3 +17,10 @@ function actionCreator(){/* böylece redux bir olayı alıp gerekli yerleri gün
 }
 // dispatch / 
 store.dispatch() // bir olayı reduxa gönderir.
+store.dispatch(loginAction());
+store.dispatch({type: "LOGIN"});
+
+//Handle an Action in the Store
+//reducer -> olaya verilecek cevabı belirler.
+// reducer, state ve actions değerlerini argüman olarak alır ve yeni bir state olarak verir.
+
