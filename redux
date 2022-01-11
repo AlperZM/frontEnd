@@ -1,5 +1,19 @@
-//redux farklı teknolojilerle çalışır. 
+//redux farklı teknolojilerle çalışır. Durum güncelleme çerçevesidir.
 // büyük projelerde state değerlerini güncellemek için kullanılır.
 //redux store uygulamadaki state değerini tutar.
 store.getState() // bir state değeri çağırır.
 let currentState = store.getState();
+/*Redux bir durum yönetimi çerçevesi olduğundan, durumu güncellemek temel görevlerinden biridir. 
+Redux'ta, tüm durum güncellemeleri, eylemlerin gönderilmesiyle tetiklenir. 
+Bir eylem, meydana gelen bir eylem olayı hakkında bilgi içeren bir JavaScript nesnesidir. 
+Redux deposu bu eylem nesnelerini alır ve ardından durumunu buna göre günceller. 
+Bazen bir Redux eylemi de bazı veriler taşır. Örneğin, eylem, bir kullanıcı oturum açtıktan sonra bir kullanıcı adı taşır. 
+Veriler isteğe bağlı olsa da, eylemler, gerçekleşen eylemin 'türünü' belirten bir tür özelliği taşımalıdır. 
+
+*/
+let action={type:"LOGIN"}; // basit bir aksiyon tanımı
+function actionCreator(){/* böylece redux bir olayı alıp gerekli yerleri günceller */
+  return action;
+}
+// dispatch / 
+store.dispatch() // bir olayı reduxa gönderir.
