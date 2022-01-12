@@ -11,7 +11,7 @@ Bazen bir Redux eylemi de bazı veriler taşır. Örneğin, eylem, bir kullanıc
 Veriler isteğe bağlı olsa da, eylemler, gerçekleşen eylemin 'türünü' belirten bir tür özelliği taşımalıdır. 
 
 */
-let action={type:"LOGIN"}; // basit bir aksiyon tanımı
+let action={type:"LOGIN"}; // basit bir aksiyon tanımı ACTİON = JS OBJECT
 function actionCreator(){/* böylece redux bir olayı alıp gerekli yerleri günceller */
   return action;
 }
@@ -22,6 +22,7 @@ store.dispatch({type: "LOGIN"});
 
 //Handle an Action in the Store
 //reducer -> olaya verilecek cevabı belirler.
+// önce action alınır reduxa gönderilir ve reducer ile gelecek cevap belirlenir. reducer saf fonksiyondur.
 // reducer, state ve actions değerlerini argüman olarak alır ve yeni bir state olarak verir.
 const ADD = 'ADD';
 const reducer = (state = 0, action) => {
