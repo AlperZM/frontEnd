@@ -1,5 +1,6 @@
 //redux farklı teknolojilerle çalışır. Durum güncelleme çerçevesidir.
 // büyük projelerde state değerlerini güncellemek için kullanılır.
+//https://www.freecodecamp.org/learn/front-end-development-libraries/redux/write-a-counter-with-redux -> tekrar et
 //redux store uygulamadaki state değerini tutar.
 store.getState() // bir state değeri çağırır.
 let currentState = store.getState();
@@ -46,5 +47,15 @@ store.dispatch({type: ADD});
 console.log(count);
 store.dispatch({type: ADD});
 console.log(count);
+
+//## Redux Thunk asycn. middleware / asenkron ara yazılım
+/* bunu reduxa dahil etmek için createStore() içine ikinci argüman olarak
+Redux.applyMiddleware(), eklenir.*/
+const store = Redux.createStore(
+  asyncDataReducer,
+  Redux.applyMiddleware(ReduxThunk.default)
+);
+
+
 
 
