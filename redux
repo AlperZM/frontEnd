@@ -57,5 +57,17 @@ const store = Redux.createStore(
 );
 
 
+//React - Redux
+/*React, verileri sağladığınız bir görünüm kitaplığıdır, ardından görünümü verimli, öngörülebilir bir şekilde işler. 
+Redux, uygulamanızın durumunun yönetimini basitleştirmek için kullanabileceğiniz bir durum yönetimi çerçevesidir. 
+Tipik olarak, bir React Redux uygulamasında, tüm uygulamanızın durumunu yöneten tek bir Redux mağazası oluşturursunuz. 
+React bileşenleriniz, yalnızca mağazadaki rolleriyle alakalı veri parçalarına abone olur. Ardından, eylemleri doğrudan 
+React bileşenlerinden gönderirsiniz ve bu da mağaza güncellemelerini tetikler.
+
+React bileşenleri kendi durumlarını yerel olarak yönetebilse de, karmaşık bir uygulamanız olduğunda, 
+Redux ile uygulama durumunu tek bir konumda tutmak genellikle daha iyidir. 
+Tek tek bileşenlerin yalnızca kendilerine özgü yerel duruma sahip olabileceği istisnalar vardır. Son olarak, 
+Redux kutudan çıktığı haliyle React ile çalışmak üzere tasarlanmadığından, tepki-redux paketini kullanmanız gerekir. 
+Redux durumunu geçmeniz ve React bileşenlerinize sahne olarak göndermeniz için bir yol sağlar. */
 
 
