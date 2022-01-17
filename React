@@ -31,7 +31,7 @@ super(props); // must be used
 }
 
 // arrow functions () => any code; /* normal fonksyonun kısaltılmıış hali*/
-// destructrşng => gerekli olanı almak:
+// destructing => gerekli olanı almak:
 const vehicles = ['mustang', 'f-150', 'expedition'];
 const [car, truck, suv] = vehicles; /* aynı sıralmada olanı alır. */
 const vehicles = ['mustang', 'f-150', 'expedition'];
