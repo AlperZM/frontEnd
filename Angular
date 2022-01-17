@@ -1,0 +1,44 @@
+https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Angular_todo_list_beginning
+// https://www.w3schools.com/angular/default.asp
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+/* Angular "ng-directive" ile HTML içerisinde eklenir.
+"ng-app" bir AngularJS uygulamasını belirtir.
+"ng-model" input - select - text area gibi HTML kontrollerinin değerini uygulama verilerine bağlar.
+"ng-bind" Uygulama verilerni HTML görünümüne bağlar.
+"ng-init" Uygulamadaki değişkenleri tanımlar.
+
+
+<div ng-app=""> //Uygulama başlığı
+  <p>Name: <input type="text" ng-model="name"></p> // model ile input değerine "name" tanımlanmış olur.
+  <p ng-bind="name"></p> // daha önceden tanımlanan "name" değeri istenilen yerde kullanılabilir.
+</div>
+<div ng-app=""> //Üst örnekle aynıdır. 
+  <p>Name: <input type="text" ng-model="name"></p>
+  <p>{{name}}</p>// {{ İstenilen yerde çalışır}}
+</div>
+
+<div ng-app="">
+<p>Select a Color: <input type="text" ng-model="color" style="background-color:{{color}} "></p>
+<p>You Choose: <span style="background-color:{{color}} " >{{color}}</span></p>
+</div> //seçilen rengi input ve span elementi için arkaplan olarak uygular.
+
+<div ng-app="" ng-init="firstName='John'"> //ng-init ile ilk değişteni tanımlatıp değer atanır.
+<p>The name is <span ng-bind="firstName"></span></p></div> 
+
+
+// ekspressions
+{{expression}} / ng-bind="expression" şeklinde yazılabilir.
+ng-app="" // baştaki <div> içerisinde kullanılmalı. 
+<div ng-app="" ng-init="quantity=1;cost=5"> //ng-app + ng-init
+<p>Total in dollar: {{ quantity * cost }}</p>
+</div> 
+
+<div ng-app="" ng-init="quantity=1;cost=5"> //ng-app + ng-bind
+<p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
+</div> 
+
+
+
+
