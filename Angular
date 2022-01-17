@@ -38,7 +38,23 @@ ng-app="" // baştaki <div> içerisinde kullanılmalı.
 <div ng-app="" ng-init="quantity=1;cost=5"> //ng-app + ng-bind
 <p>Total in dollar: <span ng-bind="quantity * cost"></span></p>
 </div> 
+/* #####
+AngularJS İfadeleri ve JavaScript İfadeleri
+JavaScript ifadeleri gibi, AngularJS ifadeleri de değişmez değerler, operatörler ve değişkenler içerebilir.
+JavaScript ifadelerinin aksine, AngularJS ifadeleri HTML içinde yazılabilir.
+AngularJS ifadeleri koşulları, döngüleri ve istisnaları desteklemezken JavaScript ifadeleri destekler.
+AngularJS ifadeleri filtreleri desteklerken JavaScript ifadeleri desteklemez. */
 
 
+
+
+//ng-object = javaScript Objects
+<div ng-app="" ng-init="person={firstName:'John', lastName:'Doe'}">
+<p>the name is {{person.firstName}}</p></div> 
+
+// AngularJS Array
+ <div ng-app="" ng-init="points=[1,15,19,2,40]">
+<p>The third result is {{ points[2] }}</p>
+</div> 
 
 
