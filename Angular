@@ -46,8 +46,6 @@ AngularJS ifadeleri koşulları, döngüleri ve istisnaları desteklemezken Java
 AngularJS ifadeleri filtreleri desteklerken JavaScript ifadeleri desteklemez. */
 
 
-
-
 //ng-object = javaScript Objects
 <div ng-app="" ng-init="person={firstName:'John', lastName:'Doe'}">
 <p>the name is {{person.firstName}}</p></div> 
@@ -56,5 +54,19 @@ AngularJS ifadeleri filtreleri desteklerken JavaScript ifadeleri desteklemez. */
  <div ng-app="" ng-init="points=[1,15,19,2,40]">
 <p>The third result is {{ points[2] }}</p>
 </div> 
+
+// AngularJS Modules
+/*
+AngularJS modülü bir uygulamayı tanımlar.
+Modül, bir uygulamanın farklı bölümleri için bir kapsayıcıdır.
+Modül, uygulama denetleyicileri için bir kapsayıcıdır.
+Kontrolörler her zaman bir modüle aittir. */
+
+
+<div ng-app="myApp">...</div>
+<script>
+var app = angular.module("myApp", []);
+</script>
+
 
 
