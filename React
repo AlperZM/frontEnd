@@ -107,13 +107,13 @@ class Garage extends React.Component {
 }
 
 ReactDOM.render(<Garage />, document.getElementById('root'));
-//state => JS Object, changing the state;
+//state => JS Object, changing the state; inlili bileşenin component kısmında atama yapılır.
 this.setState() // state değeri değiştirir.
 /* ### mounting ### */
-/* Mounting means putting elements into the DOM.
+/* Mounting means putting elements into the DOM. Bir bileşenğin çıkarılması sonucu saklamak istenilen değerleri kontrol eder.
 HTML DOM içerisine yeni elementler ekler
 React has four built-in methods that gets called, in this order, when mounting a component:
-4 farklı yerleşik metof var */
+4 farklı yerleşik metot var */
     constructor()
     getDerivedStateFromProps()
     render()
