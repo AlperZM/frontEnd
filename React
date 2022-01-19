@@ -476,5 +476,23 @@ ReactDOM.render(
 // basit projeler => yukarıdan aşağıya;
 // karmaşık projeler => aşağıdan yukarıya doğru kodlanır. böylece daha kolay test edilebilir.
 
-
+class Toggle extends React.Component{
+constructor(props){
+super(props);
+this.state = {ToggleState: true};
+this.handleClick=this.handleClick.bind(this);}
+handleClick(e){
+e.preventDefault();
+this.setState(befState=>({
+ToggleState: !befState.ToggleState
+}));
+}
+render(){
+return(
+<button onClick={this.handleClick}>{this.state.ToggleState ? "Evet": "Hayır"}</button>
+)};
+}
+ReactDOM.render(
+<Toggle />, document.getElementById("root")
+);
 
