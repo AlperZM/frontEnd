@@ -30,3 +30,14 @@
 	<p>{x} is between 5 and 10</p>
 {/if}
 
+// each loop
+<script>
+let arr = ["apple", "orange","banana"];
+</script>
+<h3>Shopping List</h3>
+<ol>
+{#each arr as i}
+<li>{i.toUpperCase()}</li>
+{/each}
+</ol>
+
