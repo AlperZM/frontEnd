@@ -3,16 +3,17 @@
   import Todo from "./Todo.svelte";
   import MoreActions from "./MoreActions.svelte";
   import NewTodo from "./NewTodo.svelte";
+  import TodosStatus from "./TodosStatus.svelte";
+
   export let todos = [];
 
-  let newTodoName = "";
-  $: newTodoId = totalTodos ? Math.max(...todos.map((t) => t.id)) + 1 : 1;
+  let todosStatus;
 
-  $: totalTodos = todos.length;
-  $: completedTodos = todos.filter((todo) => todo.completed).length;
+  $: newTodoId = todos.length ? Math.max(...todos.map((t) => t.id)) + 1 : 1;
 
   function removeTodo(todo) {
     todos = todos.filter((t) => t.id !== todo.id);
+    todosStatus.focus();
   }
 
   function addTodo(name) {
@@ -32,15 +33,14 @@
       ? todos.filter((t) => t.completed)
       : todos;
 
-  const checkAllTodos = (completed) =>
-    todos.forEach((e) => {
-      todos = todos.map((e) => ({ ...e, completed }));
-    });
+  const checkAllTodos = (completed) => {
+    todos = todos.map((t) => ({ ...t, completed }));
+  };
+
   const removeCompletedTodos = () =>
-    (todos = todos.filter((f) => !f.completed));
+    (todos = todos.filter((t) => !t.completed));
 </script>
 
-<!-- Todos.svelte -->
 <div class="todoapp stack-large">
   <!-- NewTodo -->
   <NewTodo autofocus on:addTodo={(e) => addTodo(e.detail)} />
@@ -49,9 +49,7 @@
   <FilterButton bind:filter />
 
   <!-- TodosStatus -->
-  <h2 id="list-heading">
-    {completedTodos} out of {totalTodos} items completed
-  </h2>
+  <TodosStatus bind:this={todosStatus} {todos} />
 
   <!-- Todos -->
   <ul role="list" class="todo-list stack-large" aria-labelledby="list-heading">
