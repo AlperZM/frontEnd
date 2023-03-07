@@ -1,13 +1,25 @@
 <script>
   import { createEventDispatcher } from "svelte";
+  import { onMount } from "svelte";
+
   const dispatch = createEventDispatcher();
 
+  export let autofocus = false;
+
   let name = "";
+  let nameEl;
+
   const addTodo = () => {
     dispatch("addTodo", name);
     name = "";
+    nameEl.focus();
   };
-  const onCancel = () => (name = "");
+  const onCancel = () => {
+    name = "";
+    nameEl.focus();
+  };
+
+  onMount(() => autofocus && nameEl.focus());
 </script>
 
 <form
@@ -19,6 +31,7 @@
   </h2>
   <input
     bind:value={name}
+    bind:this={nameEl}
     type="text"
     id="todo-0"
     autocomplete="off"
