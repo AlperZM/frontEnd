@@ -1,16 +1,18 @@
 <script>
-  import Navbar from "./lib/Navbar.svelte";
-  import Main from "./lib/Main.svelte";
+  import Navbar from "./Navbar.svelte";
 </script>
-
-<main>
-  <Navbar />
-  <Main />
-</main>
+<Navbar />
+<section id="main-frame" class="container">
+  <div id="hero">
+    <div id="hero-img"></div>
+    <div id="hero-description">
+      <h1>Wellcome to Svelte</h1>
+      <p>Svelte examples and some desciptions</p>
+    </div>
+  </div>
+  <article id="tutorial" class="frame"></article>
+</section>
 
 <style>
-
-
-
-
+  
 </style>
