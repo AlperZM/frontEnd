@@ -1,6 +1,5 @@
 <script>
   import Navbar from "./lib/Navbar.svelte";
-
 </script>
 
 <main>
@@ -15,10 +14,17 @@
         <button id="hero-btn">Contact</button>
       </form>
     </div>
-    <article id="tutorial" class="frame" />
   </section>
-  <article id="what-is-svelte">
+  <article id="what-is-svelte" class="articles">
     <h1>What is Svelte?</h1>
+    <div class="para1-img" />
+    <div class="para1">
+      <p>
+        <b>Sevelte</b> is a javaScript framework. But it has some difference from
+        others. Svelte has a new aproach for the web development. With Svelte, coding
+        is easy and funny.
+      </p>
+    </div>
   </article>
 </main>
 
@@ -68,14 +74,28 @@
     cursor: pointer;
     transition: all 0.4s linear;
   }
-  #what-is-svelte {
-    border: 1px solid red;
+  .articles {
+    position: relative;
     display: flex;
     justify-content: center;
-    align-content: flex-start;
+    align-content: center;
+    flex-flow: row wrap;
+    -ms-flex-flow: row wrap;
     padding: 16px;
+    overflow: auto;
   }
-  #what-is-svelte h1 {
+  .articles h1 {
     color: var(--fourth);
+    margin: auto;
+  }
+  .para1-img {
+    float: left;
+    width: 300px;
+    height: 300px;
+    background: grey;
+    margin: 16px;
+    box-shadow: 5px 5px 10px 0px grey;
+  }
+  .para1 {
   }
 </style>
