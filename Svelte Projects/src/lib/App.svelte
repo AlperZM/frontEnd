@@ -1,5 +1,6 @@
 <script>
   import Navbar from "./lib/Navbar.svelte";
+  import Footer from "./lib/Footer.svelte";
 </script>
 
 <main>
@@ -17,7 +18,7 @@
   </section>
   <article id="what-is-svelte" class="articles">
     <h1>What is Svelte?</h1>
-    <div class="para1-img" />
+    <div class="para1-img"></div>
     <div class="para1">
       <p>
         <b>Sevelte</b> is a javaScript framework. But it has some difference from
@@ -27,6 +28,7 @@
     </div>
   </article>
 </main>
+<Footer />
 
 <style>
   main {
