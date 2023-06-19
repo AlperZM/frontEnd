@@ -16,9 +16,10 @@
     display: flex;
     justify-content: space-between;
     align-content: center;
+    flex-wrap: wrap;
     width: auto;
-    height: 80px;
-    margin-left: 120px;
+    height: auto;
+    margin: 0 0 0 120px;
     background: var(--secondary);
   }
   .box {
