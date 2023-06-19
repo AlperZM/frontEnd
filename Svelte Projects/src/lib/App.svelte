@@ -1,6 +1,7 @@
 <script>
   import Navbar from "./lib/Navbar.svelte";
   import Footer from "./lib/Footer.svelte";
+  import LearnMore from "./lib/LearnMore.svelte";
 </script>
 
 <main>
@@ -9,24 +10,33 @@
     <div id="hero">
       <div id="hero-img" />
       <div id="hero-description">
-        <span>Wellcome to Svelte</span>
-      </div>
-      <form action="#contact">
+        <h1>Svelte </h1>
+        <p>New Aproach for Web Development</p>
+              <form action="#contact">
         <button id="hero-btn">Contact</button>
       </form>
+      </div>
     </div>
   </section>
-  <article id="what-is-svelte" class="articles">
-    <h1>What is Svelte?</h1>
-    <div class="para1-img"></div>
-    <div class="para1">
-      <p>
-        <b>Sevelte</b> is a javaScript framework. But it has some difference from
-        others. Svelte has a new aproach for the web development. With Svelte, coding
-        is easy and funny.
-      </p>
-    </div>
-  </article>
+  <section id="intro" class="articles">
+<div class="boxes">
+<div id="what-is-svelte" class="intro-box">
+  <h2>What is Svelte?</h2>
+<p><b>Svelte</b> is an extra ordinary javaScript Framework. The keywords for Svelte is: "ServerSideRendering" and "Minimalist". That means less code, less page(app) size and happy developers, happy users.</p>
+<LearnMore page="#" />
+</div>
+  <div id="why-svelte" class="intro-box">
+    <h2>Why You Should Use Svelte?</h2>
+    <p><b>Svelte</b> has new aproaches for the web and app development. One of them is <b>Server Side Rendering</b>, that means all javaScript and other details complies in server. And send user complied app. Other advantages is minimalizm. Thşs means write less code...</p>
+    <LearnMore page="#" />
+  </div>
+  <div id="new-aproach" class="intro-box">
+    <h2>New Aproaches</h2>
+    <p>Most of javaScript frameworks or libraries compiles in client side. That is why some times page or app is seems slowly. But <b>Svelte compiles in Server</b> and send user the output of the app. </p>
+    <LearnMore page="#"/>
+  </div>
+</div>
+  </section>
 </main>
 <Footer />
 
@@ -50,11 +60,14 @@
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
-    flex-flow: column wrap;
     justify-content: center;
     align-items: center;
   }
   #hero-description {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     font-size: 36px;
     color: var(--third);
     margin: 20px;
@@ -78,26 +91,23 @@
   }
   .articles {
     position: relative;
-    display: flex;
+    padding: 8px;
+    overflow: auto;
+  }
+  .boxes{
+        display: flex;
     justify-content: center;
     align-content: center;
     flex-flow: row wrap;
     -ms-flex-flow: row wrap;
-    padding: 16px;
-    overflow: auto;
   }
-  .articles h1 {
-    color: var(--fourth);
-    margin: auto;
-  }
-  .para1-img {
-    float: left;
-    width: 300px;
-    height: 300px;
-    background: grey;
-    margin: 16px;
-    box-shadow: 5px 5px 10px 0px grey;
-  }
-  .para1 {
-  }
+.intro-box{
+  width: 300px;
+  height: 360px;
+  margin: 16px;
+  padding: 16px;
+  background: var(--secondary);
+  border-radius: 16px;
+}
+
 </style>
